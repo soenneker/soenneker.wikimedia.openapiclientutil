@@ -1,20 +1,19 @@
 using Soenneker.Wikimedia.OpenApiClientUtil.Abstract;
-using Soenneker.Tests.FixturedUnit;
-using Xunit;
+using Soenneker.Tests.HostedUnit;
 
 namespace Soenneker.Wikimedia.OpenApiClientUtil.Tests;
 
-[Collection("Collection")]
-public sealed class WikimediaOpenApiClientUtilTests : FixturedUnitTest
+[ClassDataSource<Host>(Shared = SharedType.PerTestSession)]
+public sealed class WikimediaOpenApiClientUtilTests : HostedUnitTest
 {
     private readonly IWikimediaOpenApiClientUtil _openapiclientutil;
 
-    public WikimediaOpenApiClientUtilTests(Fixture fixture, ITestOutputHelper output) : base(fixture, output)
+    public WikimediaOpenApiClientUtilTests(Host host) : base(host)
     {
         _openapiclientutil = Resolve<IWikimediaOpenApiClientUtil>(true);
     }
 
-    [Fact]
+    [Test]
     public void Default()
     {
 
