@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 namespace Soenneker.Wikimedia.OpenApiClientUtil.Abstract;
 
 /// <summary>
-/// Exposes a cached OpenAPI client instance.
+/// Provides a cached Wikimedia API client backed by the configured HTTP transport.
 /// </summary>
-public interface IWikimediaOpenApiClientUtil: IDisposable, IAsyncDisposable
+public interface IWikimediaOpenApiClientUtil : IDisposable, IAsyncDisposable
 {
     /// <summary>
-    /// Gets the value.
+    /// Gets the cached Wikimedia API client.
     /// </summary>
     /// <param name="cancellationToken">The cancellation token.</param>
-    /// <returns>A task containing the result of the operation.</returns>
+    /// <returns>The configured Wikimedia API client.</returns>
     ValueTask<WikimediaOpenApiClient> Get(CancellationToken cancellationToken = default);
 }

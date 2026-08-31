@@ -6,12 +6,12 @@ using Soenneker.Wikimedia.OpenApiClientUtil.Abstract;
 namespace Soenneker.Wikimedia.OpenApiClientUtil.Registrars;
 
 /// <summary>
-/// Registers the OpenAPI client utility for dependency injection.
+/// Registers the cached Wikimedia API client provider.
 /// </summary>
 public static class WikimediaOpenApiClientUtilRegistrar
 {
     /// <summary>
-    /// Adds <see cref="WikimediaOpenApiClientUtil"/> as a singleton service. <para/>
+    /// Adds the Wikimedia API client provider as a singleton service.
     /// </summary>
     public static IServiceCollection AddWikimediaOpenApiClientUtilAsSingleton(this IServiceCollection services)
     {
@@ -22,7 +22,7 @@ public static class WikimediaOpenApiClientUtilRegistrar
     }
 
     /// <summary>
-    /// Adds <see cref="WikimediaOpenApiClientUtil"/> as a scoped service. <para/>
+    /// Adds the Wikimedia API client provider as a scoped service while retaining the singleton HTTP transport.
     /// </summary>
     public static IServiceCollection AddWikimediaOpenApiClientUtilAsScoped(this IServiceCollection services)
     {
