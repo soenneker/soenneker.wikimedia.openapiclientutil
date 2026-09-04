@@ -11,6 +11,7 @@ using Soenneker.Utils.AsyncSingleton;
 
 namespace Soenneker.Wikimedia.OpenApiClientUtil;
 
+/// <inheritdoc cref="IWikimediaOpenApiClientUtil" />
 public sealed class WikimediaOpenApiClientUtil : IWikimediaOpenApiClientUtil
 {
     private readonly AsyncSingleton<WikimediaOpenApiClient> _client;
